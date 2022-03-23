@@ -1,7 +1,10 @@
 package com.example.petinder.petinderApp;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
+@Repository
 public class PetRepository {
     public List<Pet> getAllPets() {
         return List.of(

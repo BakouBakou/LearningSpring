@@ -1,7 +1,12 @@
 package com.example.petinder.petinderApp;
 
+
+
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+@Component
 public class PetMapper {
 
     public PetDTO toDTO(Pet pet) {
@@ -13,4 +18,6 @@ public class PetMapper {
                 .map(this::toDTO)
                 .toList();
     }
+
+
 }
