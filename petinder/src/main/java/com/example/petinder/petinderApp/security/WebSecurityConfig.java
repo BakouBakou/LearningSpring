@@ -1,6 +1,5 @@
 package com.example.petinder.petinderApp.security;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -24,8 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .jwtAuthenticationConverter(jwtAuthenticationConverter());
     }
 
-    @Bean
-    public JwtAuthenticationConverter jwtAuthenticationConverter() {
+    private JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
         converter.setJwtGrantedAuthoritiesConverter(new KeycloakGrantedAuthoritiesConverter());
         return converter;
