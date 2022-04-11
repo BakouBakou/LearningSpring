@@ -1,5 +1,6 @@
 package com.example.petinder.petinderApp;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,7 @@ public class PetController {
 //    }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('VIEW_PETS')")
     public List<PetDTO> getAllPets() {
         return petService.getAllPets();
     }
